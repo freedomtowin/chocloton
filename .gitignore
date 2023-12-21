@@ -1,0 +1,20 @@
+# ignore vscode directory
+.vscode
+.DS_Store
+
+__pycache__
+__pycache__/*
+
+.ipynb_checkpoints
+.ipynb_checkpoints/*
+artifacts
+artifacts/*
+build/*
+dist/*
+
+*.egg-info
+
+/aws-automated-webscraper-kinesis/*
+/aws-automated-webscraper-kinesis/environment.env
+./aws-automated-webscraper-kinesis/src/__pycache__/*
+/aws-automated-webscraper-kinesis/Pipfile.lock
