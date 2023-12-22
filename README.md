@@ -41,7 +41,7 @@ pip install chocloton --upgrade
 
 ## Examples <a name="examples"></a>
 
-### Density Factorication
+### Density Factorization
 1. Blog Post: https://rohankotwani.medium.com/hierarchical-density-factorization-with-kernelml-f2c98ce0eb1f
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/density-factorization
 
