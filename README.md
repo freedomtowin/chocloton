@@ -44,18 +44,22 @@ pip install chocloton --upgrade
 ### Density Factorization
 1. Blog Post: https://rohankotwani.medium.com/hierarchical-density-factorization-with-kernelml-f2c98ce0eb1f
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/density-factorization
+3. Description:  Multi-Objective Optimization using IID Uniform Kernels
 
 ### Nearest Correlation Matrices
 1. Blog Post: https://medium.com/towards-data-science/a-few-properties-of-random-correlation-matrices-and-their-nearest-correlation-matrices-7e0d7e1a29bb
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/nearest-correlation-matrices
+3. Description:  Finding Nearest (Positive Semi-Definite) Correlation Matrices
 
 ### Chaotic Attractor Simulations
 1. Blog Post: https://medium.com/@rohankotwani/interesting-properties-of-chaotic-attractors-1eb33e4bea99
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/chaotic-attractor
+3. Description:  Simulating Chaotic Attractors
 
 ### Circuit Solving
 1. Blog Post: https://medium.com/vacatronics/brute-force-circuit-solving-with-kernelml-and-ray-b6fc3ff4fe14
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/circuit-solving
+3. Description:  Solving Simple Resistor/Transistor Circuits
 
 
 
