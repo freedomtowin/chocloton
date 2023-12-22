@@ -19,7 +19,7 @@ Due to the recent changes to threading and MKL in Anaconda distributions additio
 1. [Installation](#installation)
 2. [Examples](#examples)
 3. [Methods](#methods)
-    1. [KmlData](#kmldata)
+    1. [KmlData](#choclo_data)
     2. [Passing Static Data](#staticdata)
     2. [Parallel Processing with Numba](#parallelnumba)
 	2. [Parallel Processing with Ray](#parallelray)
@@ -151,31 +151,31 @@ The optimizer's parameters can be automatically adjusted by adjusting the follow
 * **print_feedback:** real-time feedback of parameters,losses, and convergence
 
 
-### kmldata <a name="kmldata"></a>
+### choclo_data <a name="choclo_data"></a>
 
 A KmlData class is primarily used to pass relevant information to the sampler functions.
 
 ### Data
-* **ChocloOptimizer().kmldata.best_weight_vector:** numpy array of the best weights for the current cycle 
-* **ChocloOptimizer().kmldata.current_weights:** numpy array of simulated weights for the current cycle
-* **ChocloOptimizer().kmldata.update_history:** numpy array of parameter updates for the current realization - (weight set, update #)
-* **ChocloOptimizer().kmldata.loss_history:** numpy array of losses for the current realization
-* **ChocloOptimizer().kmldata.realization_number:** current number of realizations
-* **ChocloOptimizer().kmldata.cycle_number:** current number of cycles
-* **ChocloOptimizer().kmldata.number_of_parameters:** number of parameters passed to the loss function
-* **ChocloOptimizer().kmldata.prior_random_samples:** the number of prior simulated parameters
-* **ChocloOptimizer().kmldata.posterior_random_samples:** the number of posterior simulated parameters
-* **ChocloOptimizer().kmldata.number_of_updates:** number of successful parameter updates
+* **ChocloOptimizer().choclo_data.best_weight_vector:** numpy array of the best weights for the current cycle 
+* **ChocloOptimizer().choclo_data.current_weights:** numpy array of simulated weights for the current cycle
+* **ChocloOptimizer().choclo_data.update_history:** numpy array of parameter updates for the current realization - (weight set, update #)
+* **ChocloOptimizer().choclo_data.loss_history:** numpy array of losses for the current realization
+* **ChocloOptimizer().choclo_data.realization_number:** current number of realizations
+* **ChocloOptimizer().choclo_data.cycle_number:** current number of cycles
+* **ChocloOptimizer().choclo_data.number_of_parameters:** number of parameters passed to the loss function
+* **ChocloOptimizer().choclo_data.prior_random_samples:** the number of prior simulated parameters
+* **ChocloOptimizer().choclo_data.posterior_random_samples:** the number of posterior simulated parameters
+* **ChocloOptimizer().choclo_data.number_of_updates:** number of successful parameter updates
 
-### Load kmldata
+### Load choclo_data
 
-An optimization model can continue where the previous model left off by loading the kmldata.
+An optimization model can continue where the previous model left off by loading the choclo_data.
 
 ```
 #optimize
-save_kmldata = ChocloOptimizer().kmldata
-#load kmldata
-ChocloOptimizer().load_kmldata(save_kmldata)
+save_choclo_data = ChocloOptimizer().choclo_data
+#load choclo_data
+ChocloOptimizer().load_choclo_data(save_choclo_data)
 ```
 
 ### Passing Static Data <a name="staticdata"></a>
@@ -282,37 +282,37 @@ The default random sampling functions for the prior and posterior distributions 
 
 ```python
     #prior sampler (default)
-    def prior_sampler_uniform_distribution(kmldata):
-        random_samples = kmldata.prior_random_samples
-        num_params = kmldata.number_of_parameters
+    def prior_sampler_uniform_distribution(choclo_data):
+        random_samples = choclo_data.prior_random_samples
+        num_params = choclo_data.number_of_parameters
         # (self.high and self.low) correspond to (prior_uniform_low, prior_uniform_high)
         return np.random.uniform(low=self.low,high=self.high,size=(num_params,
                                                                    random_samples))
 
     #posterior sampler (default)
-    def posterior_sampler_uniform_distribution(kmldata):
+    def posterior_sampler_uniform_distribution(choclo_data):
     
-        random_samples = kmldata.prior_random_samples
-        variances = np.var(kmldata.update_history[:,:],axis=1).flatten()
-        means = kmldata.best_weight_vector.flatten()
+        random_samples = choclo_data.prior_random_samples
+        variances = np.var(choclo_data.update_history[:,:],axis=1).flatten()
+        means = choclo_data.best_weight_vector.flatten()
 
         return np.vstack([np.random.uniform(mu-np.sqrt(sigma*12)/2,mu+np.sqrt(sigma*12)/2,(random_samples)) for sigma,mu in zip(variances,means)])
             
             
     #intermediate sampler (default)
-    def intermediate_sampler_uniform_distribution(kmldata):
+    def intermediate_sampler_uniform_distribution(choclo_data):
 
-            random_samples = kmldata.prior_random_samples
-            variances = np.var(kmldata.update_history[:,:],axis=1).flatten()
-            means = kmldata.update_history[:,-1].flatten()
+            random_samples = choclo_data.prior_random_samples
+            variances = np.var(choclo_data.update_history[:,:],axis=1).flatten()
+            means = choclo_data.update_history[:,-1].flatten()
 
             return np.vstack([np.random.uniform(mu-np.sqrt(sigma*12)/4,mu+np.sqrt(sigma*12)/4,(random_samples)) for sigma,mu in zip(variances,means)])
         
     from math import gamma
     #http://downloads.hindawi.com/journals/cin/2019/4243853.pdf
-    def sampler_direction_based_stochastic_search(kmldata):
+    def sampler_direction_based_stochastic_search(choclo_data):
 
-        X = kmldata.update_history[:,::-1]
+        X = choclo_data.update_history[:,::-1]
 
         X = X[:,:X.shape[1] - X.shape[1]%2]
 
