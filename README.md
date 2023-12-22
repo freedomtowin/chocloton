@@ -18,10 +18,6 @@ Due to the recent changes to threading and MKL in Anaconda distributions additio
 ## Table of contents
 1. [Installation](#installation)
 2. [Examples](#examples)
-    1. [Kernel Mapping](#kernelmapping)
-    2. [Optimal Power Transformation](#powertransformation)
-    3. [Enhanced Ridge Regression](#ridge)
-    4. [Parameter Tuning](#tuning)
 3. [Methods](#methods)
     1. [KmlData](#kmldata)
     2. [Passing Static Data](#staticdata)
