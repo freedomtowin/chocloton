@@ -61,7 +61,9 @@ pip install chocloton --upgrade
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/circuit-solving
 3. Description:  Solving Simple Resistor/Transistor Circuits
 
-
+### SVM Optimization
+1. Blog Post: https://towardsdatascience.com/svm-optimization-on-a-gpu-with-kernelml-acb3d17856cd
+2. Project Link: https://colab.research.google.com/drive/1Zkk7Q9guyP5cokn1_LSuK9s-UDQDzhrD?usp=sharing
 
 ## Methods <a name="methods"></a>
 
