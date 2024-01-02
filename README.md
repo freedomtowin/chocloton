@@ -46,24 +46,42 @@ pip install chocloton --upgrade
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/density-factorization
 3. Description:  Multi-Objective Optimization using IID Uniform Kernels
 
+* Outline the goals of approximating any multi-variate distribution and building a parameterized density estimator.
+* Discuss the approach using Particle Swarm/Genetic Optimizer, Multi-Agent Approximation, and Reinforcement Learning.
+* Mention the applications like outlier detection and dataset noise reduction.
+
 ### Nearest Correlation Matrices
 1. Blog Post: https://medium.com/towards-data-science/a-few-properties-of-random-correlation-matrices-and-their-nearest-correlation-matrices-7e0d7e1a29bb
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/nearest-correlation-matrices
 3. Description:  Finding Nearest (Positive Semi-Definite) Correlation Matrices
+
+* Explain the relevance of finding the nearest positive semi-definite correlation matrix.
+* Compare classical methods with the brute force approach using Chocloton.
+* Discuss the significance in understanding the correlation matrix and improving correlation estimates.
 
 ### Chaotic Attractor Simulations
 1. Blog Post: https://medium.com/@rohankotwani/interesting-properties-of-chaotic-attractors-1eb33e4bea99
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/chaotic-attractor
 3. Description:  Simulating Chaotic Attractors
 
+* Introduce chaotic attractors and their properties.
+* Discuss the hypothesis about the distribution of parameters leading to similar chaotic attractors.
+* Present the results obtained using Chocloton.
+
 ### Circuit Solving
 1. Blog Post: https://medium.com/vacatronics/brute-force-circuit-solving-with-kernelml-and-ray-b6fc3ff4fe14
 2. Project Link: https://github.com/freedomtowin/chocloton/tree/main/examples/circuit-solving
 3. Description:  Solving Simple Resistor/Transistor Circuits
 
+* Explain the representation of circuits and the potential benefits of a brute-force solver.
+* Emphasize the flexibility in changing variable representations without recomputing the algebraic solution.
+
 ### SVM Optimization
 1. Blog Post: https://towardsdatascience.com/svm-optimization-on-a-gpu-with-kernelml-acb3d17856cd
 2. Project Link: https://colab.research.google.com/drive/1Zkk7Q9guyP5cokn1_LSuK9s-UDQDzhrD?usp=sharing
+
+* Provide an overview of the optimization of a multi-class, linear support vector machine.
+* Discuss the use of Chocloton for SVM optimization and the benefits of using a simulation-based optimizer.
 
 ## Methods <a name="methods"></a>
 
