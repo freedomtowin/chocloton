@@ -8,7 +8,7 @@ Examples script will be updated soon.
 
 ## About 
 
-ChocloOptimizer is brute force optimizer that can be used to train machine learning models. The package uses a combination of a neuroevolution algorithms, heuristics, and monte carlo simulations to optimize a parameter vector with a user-defined loss function.
+ChocloOptimizer is brute force optimizer that can be used to train machine learning models. The package uses a combination of a neuroevolution algorithms, heuristics, and monte carlo simulations to optimize a parameter vector with a user-defined loss function. The algorithm uses the parameter update history in a machine learning model to decide how to update the next parameter set, i.e., a dense neural network is created with Tensorflow.
 
 The field of high performance computing is always change, and parallelization is very important for simulation based optimizers. This is why parallelization is left to the developer to implement. Chocloton supports Numba compiled functions for parallelization across CPUs and GPU acceleration. 
 
